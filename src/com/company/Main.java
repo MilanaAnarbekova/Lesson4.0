@@ -1,9 +1,6 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
 
@@ -78,7 +75,12 @@ public class Main {
 
         System.out.println(productsC);
 
-        Collections.sort(productsC);
+        Collections.sort(productsC, new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return o1.length() - o2.length();
+            }
+        });
 
         System.out.println(productsC);
 
